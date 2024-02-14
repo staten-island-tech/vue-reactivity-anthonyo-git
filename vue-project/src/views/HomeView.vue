@@ -1,9 +1,9 @@
 <script setup>
-import firstVue from '../components/firstVue.vue'
+import earthWorld from '../components/earthWorld.vue'
 </script>
 
 <template>
   <main>
-    <firstVue />
+    <earthWorld />
   </main>
 </template>

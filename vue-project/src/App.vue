@@ -9,8 +9,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
       <nav>
-        <RouterLink to="/">home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Moon</RouterLink>
+        <RouterLink to="/about">Earth</RouterLink>
       </nav>
     </div>
   </header>
