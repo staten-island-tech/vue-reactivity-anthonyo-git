@@ -1,9 +1,9 @@
 <script setup>
-import moonWorld from '../components/moonWorld.vue'
+import achievement from '../components/achievement.vue'
 </script>
 
 <template>
   <main>
-    <moonworld/>
+    <achievement/>
   </main>
 </template>
