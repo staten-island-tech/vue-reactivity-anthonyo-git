@@ -2,15 +2,18 @@
   <div class="game-container">
     <div class="money-display">${{ money }}</div>
     <div   
-      class="rectangle" v-for="(business, key) in businesses" :key="key" @click="addMoney(business.profit)"> {{ business.name }}
-    </div>
-  </div> 
-  
+      class="rectangle" v-for="(business, key) in businesses" :key="key" @click="addMoney(business.profit)"> 
+      {{ business.name }}
+      {{ business.profit + "$" }}
+      <img :src="business.image" :key="key" />
+
+    </div>  
   <!-- <button @click="count++">Add 1</button>
   <p>Count is: {{ count }}</p>
     <div class="circle" v-for="(circle, index) in circles" :key="index">
       {{ circle.name }}
     </div> -->
+  </div> 
 </template>
 
 
@@ -150,6 +153,9 @@ const businesses = ref([
 
 <style scoped>
 
+.imageBusinesses {
+  size: 100%
+}
 .money-display {
   position: absolute;
   top: 10px; 
@@ -180,3 +186,4 @@ const businesses = ref([
 // notes
 // https://vuejs.org/guide/essentials/list
 // https://adventure-capitalist.fandom.com/wiki/Businesses
+// css cover x until money balance is reaches a certain amount

@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <HelloWorld msg="You did it!" />
       <nav>
         <RouterLink to="/">Earth</RouterLink>
-        <RouterLink to="/about">Moon</RouterLink>
+        <RouterLink to="/about">achievement</RouterLink>
       </nav>
     </div>
   </header>
