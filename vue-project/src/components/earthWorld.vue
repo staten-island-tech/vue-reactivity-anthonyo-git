@@ -1,14 +1,16 @@
 <template>
-  <button @click="count++">Add 1</button>
-  <p>Count is: {{ count }}</p>
-  <div div class="game-container">
-    <div class="rectangle" v-for="(rectangle, index) in rectangles" :key="index" > {{ rectangle.name }} </div>
+  <div class="game-container">
     <div class="money-display">${{ money }}</div>
-  </div>
-    <!-- <div class="circle" v-for="(circle, index) in circles" :key="index">
+    <div   
+      class="rectangle" v-for="(business, key) in businesses" :key="key" @click="addMoney(business.profit)"> {{ business.name }}
+    </div>
+  </div> 
+  
+  <!-- <button @click="count++">Add 1</button>
+  <p>Count is: {{ count }}</p>
+    <div class="circle" v-for="(circle, index) in circles" :key="index">
       {{ circle.name }}
     </div> -->
-
 </template>
 
 
@@ -17,9 +19,14 @@ import { ref } from 'vue';
 
 const money = ref(0);
 
-setInterval(() => {
-  money.value +=  1; 
-},  1000)
+const addMoney = (amount) => {
+  money.value += amount;
+};
+
+
+// setInterval(() => {
+//   money.value +=  1; 
+// },  1000)
 
 const rectangles = ref([
   { name: 'Lemonade Stand  ' },
@@ -32,6 +39,111 @@ const rectangles = ref([
   { name: 'Movie Studio  ' },
   { name: 'Bank  ' },
   { name: 'Oil Company  ' },
+]);
+
+
+
+const businesses = ref([
+  {
+    id: 'lemonadeStand',
+    rectangleNum:  1,
+    name: 'Lemonade stand',
+    price:  1,
+    timeTaken:  1,
+    quantityPurchased:  1,
+    profit:  1,
+    image: 'lemon.png',
+  },
+  {
+    id: 'newspaperDelivery',
+    rectangleNum:  2,
+    name: 'Newspaper Deliver',
+    price:  30,
+    timeTaken:  3,
+    quantityPurchased:  0,
+    profit:  25,
+    image: 'newspaper.png',
+  },
+  {
+    id: 'carWash',
+    rectangleNum:  3,
+    name: 'Car Wash',
+    price:  500,
+    timeTaken:  6,
+    quantityPurchased:  0,
+    profit:  300,
+    image: 'car.png',
+  },
+  {
+    id: 'pizzaDelivery',
+    rectangleNum:  4,
+    name: 'Pizza Delivery',
+    price:  3000,
+    timeTaken:  12,
+    quantityPurchased:  0,
+    profit:  2000,
+    image: 'pizza.png',
+  },
+  {
+    id: 'donutShop',
+    rectangleNum:  5,
+    name: 'Donut Shop',
+    price:  50000,
+    timeTaken:  30,
+    quantityPurchased:  0,
+    profit:  20000,
+    image: 'donut.png',
+  },
+  {
+    id: 'shrimpBoat',
+    rectangleNum:  6,
+    name: 'Shrimp Boat',
+    price:  800000,
+    timeTaken:  90,
+    quantityPurchased:  0,
+    profit:  4000000,
+    image: 'boat.png',
+  },
+  {
+    id: 'hockeyTeam',
+    rectangleNum:  7,
+    name: 'Hockey Team',
+    price:  6000000,
+    timeTaken:  600,
+    quantityPurchased:  0,
+    profit:  4000000,
+    image: 'hockey.png',
+  },
+  {
+    id: 'movieStudio',
+    rectangleNum:  8,
+    name: 'Movie Studio',
+    price:  100000000,
+    timeTaken:  3600,
+    quantityPurchased:  0,
+    profit:  40000000,
+    image: 'movie.png',
+  },
+  {
+    id: 'bank',
+    rectangleNum:  9,
+    name: 'Bank',
+    price:  5000000000,
+    timeTaken:  36000,
+    quantityPurchased:  0,
+    profit:  1000000000,
+    image: 'bank.png',
+  },
+  {
+    id: 'oilCompany',
+    order:  10,
+    name: 'Oil Company',
+    price:  153434564431,
+    timeTaken:  36000,
+    quantityPurchased:  0,
+    profit:  51434564431,
+    image: 'company.png',
+  },
 ]);
 
 </script>
@@ -60,6 +172,7 @@ const rectangles = ref([
   background-color: #eee; 
   border:  1px solid #000;
   margin:  10px;
+  cursor: pointer
 }
 
 </style>
