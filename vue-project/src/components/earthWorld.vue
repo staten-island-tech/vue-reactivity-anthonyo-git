@@ -1,21 +1,17 @@
 <template>
   <div class="game-container">
     <div class="money-display">${{ money }}</div>
-    <div   
-      class="rectangle" v-for="(business, key) in businesses" :key="key" @click="addMoney(business.profit)"> 
-      {{ business.name }}
-      {{ business.profit + "$" }}
-      <img :src="business.image" :key="key" />
-
-    </div>  
+    <div class="rectangle" v-for="(business, index) in businesses" :key="index" @click="addMoney(business.profit)">
+      {{ business.name }}  {{ business.profit }}$
+      <img :src="business.image" class="imageBusinesses"/>
+    </div>
+  </div>
+</template>
   <!-- <button @click="count++">Add 1</button>
   <p>Count is: {{ count }}</p>
     <div class="circle" v-for="(circle, index) in circles" :key="index">
       {{ circle.name }}
     </div> -->
-  </div> 
-</template>
-
 
 <script setup>
 import { ref } from 'vue';
@@ -55,7 +51,7 @@ const businesses = ref([
     timeTaken:  1,
     quantityPurchased:  1,
     profit:  1,
-    image: 'lemon.png',
+    image: '/assets/lemon.png',
   },
   {
     id: 'newspaperDelivery',
@@ -65,7 +61,7 @@ const businesses = ref([
     timeTaken:  3,
     quantityPurchased:  0,
     profit:  25,
-    image: 'newspaper.png',
+    image: '/assets/newspaper.png',
   },
   {
     id: 'carWash',
@@ -75,7 +71,7 @@ const businesses = ref([
     timeTaken:  6,
     quantityPurchased:  0,
     profit:  300,
-    image: 'car.png',
+    image: '/assets/car.png',
   },
   {
     id: 'pizzaDelivery',
@@ -85,7 +81,7 @@ const businesses = ref([
     timeTaken:  12,
     quantityPurchased:  0,
     profit:  2000,
-    image: 'pizza.png',
+    image: '/assets/pizza.png',
   },
   {
     id: 'donutShop',
@@ -95,7 +91,7 @@ const businesses = ref([
     timeTaken:  30,
     quantityPurchased:  0,
     profit:  20000,
-    image: 'donut.png',
+    image: '/assets/donut.png',
   },
   {
     id: 'shrimpBoat',
@@ -105,7 +101,7 @@ const businesses = ref([
     timeTaken:  90,
     quantityPurchased:  0,
     profit:  4000000,
-    image: 'boat.png',
+    image: '/assets/boat.png',
   },
   {
     id: 'hockeyTeam',
@@ -115,7 +111,7 @@ const businesses = ref([
     timeTaken:  600,
     quantityPurchased:  0,
     profit:  4000000,
-    image: 'hockey.png',
+    image: '/assets/hockey.png',
   },
   {
     id: 'movieStudio',
@@ -125,7 +121,7 @@ const businesses = ref([
     timeTaken:  3600,
     quantityPurchased:  0,
     profit:  40000000,
-    image: 'movie.png',
+    image: '/assets/movie.png',
   },
   {
     id: 'bank',
@@ -135,7 +131,7 @@ const businesses = ref([
     timeTaken:  36000,
     quantityPurchased:  0,
     profit:  1000000000,
-    image: 'bank.png',
+    image: '/assets/bank.png',
   },
   {
     id: 'oilCompany',
@@ -145,7 +141,7 @@ const businesses = ref([
     timeTaken:  36000,
     quantityPurchased:  0,
     profit:  51434564431,
-    image: 'company.png',
+    image: '/assets/company.png',
   },
 ]);
 
@@ -154,7 +150,8 @@ const businesses = ref([
 <style scoped>
 
 .imageBusinesses {
-  size: 100%
+  height: 1000%;
+  width: 1000%
 }
 .money-display {
   position: absolute;
