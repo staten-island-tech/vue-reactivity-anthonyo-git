@@ -1,9 +1,19 @@
 <template>
-  <div class="game-container">
-    <div class="money-display">${{ money }}</div>
-    <div class="rectangle" v-for="(business, index) in businesses" :key="index" @click="addMoney(business.profit)">
-      {{ business.name }}  {{ business.profit }}$
-      <img :src="business.image" class="imageBusinesses"/>
+  <div class="body">    
+    <div class="Heading-Bar">
+      <div class="Captalist">
+        <img src="https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/capitalist.png" alt="captalistMan">
+      </div>
+      <div class="money-display">${{ money }}</div>
+    </div>
+    <div class="game-container">
+      <div v-for="(business, index) in businesses" :key="index" class="business-item">
+        <img :src="business.image" class="imageBusinesses"/>
+        <div class="rectangle" @click="addMoney(business.profit)">
+          {{ business.name }}   
+          ${{ business.profit }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,7 +61,7 @@ const businesses = ref([
     timeTaken:  1,
     quantityPurchased:  1,
     profit:  1,
-    image: '/assets/lemon.png',
+    image: 'https://i.imgur.com/uf6dPpY.png',
   },
   {
     id: 'newspaperDelivery',
@@ -61,7 +71,7 @@ const businesses = ref([
     timeTaken:  3,
     quantityPurchased:  0,
     profit:  25,
-    image: '/assets/newspaper.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/newspaper.png',
   },
   {
     id: 'carWash',
@@ -71,7 +81,7 @@ const businesses = ref([
     timeTaken:  6,
     quantityPurchased:  0,
     profit:  300,
-    image: '/assets/car.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/car.png',
   },
   {
     id: 'pizzaDelivery',
@@ -81,7 +91,7 @@ const businesses = ref([
     timeTaken:  12,
     quantityPurchased:  0,
     profit:  2000,
-    image: '/assets/pizza.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/pizza.png',
   },
   {
     id: 'donutShop',
@@ -91,7 +101,7 @@ const businesses = ref([
     timeTaken:  30,
     quantityPurchased:  0,
     profit:  20000,
-    image: '/assets/donut.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/donut.png',
   },
   {
     id: 'shrimpBoat',
@@ -101,7 +111,7 @@ const businesses = ref([
     timeTaken:  90,
     quantityPurchased:  0,
     profit:  4000000,
-    image: '/assets/boat.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/boat.png',
   },
   {
     id: 'hockeyTeam',
@@ -111,7 +121,7 @@ const businesses = ref([
     timeTaken:  600,
     quantityPurchased:  0,
     profit:  4000000,
-    image: '/assets/hockey.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/hockey.png',
   },
   {
     id: 'movieStudio',
@@ -121,7 +131,7 @@ const businesses = ref([
     timeTaken:  3600,
     quantityPurchased:  0,
     profit:  40000000,
-    image: '/assets/movie.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/movie.png',
   },
   {
     id: 'bank',
@@ -131,7 +141,7 @@ const businesses = ref([
     timeTaken:  36000,
     quantityPurchased:  0,
     profit:  1000000000,
-    image: '/assets/bank.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/bank.png',
   },
   {
     id: 'oilCompany',
@@ -141,7 +151,7 @@ const businesses = ref([
     timeTaken:  36000,
     quantityPurchased:  0,
     profit:  51434564431,
-    image: '/assets/company.png',
+    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/company.png',
   },
 ]);
 
@@ -149,33 +159,65 @@ const businesses = ref([
 
 <style scoped>
 
-.imageBusinesses {
-  height: 1000%;
-  width: 1000%
+.body {
+  font-family: "Comic Sans",cursive;
+  font-weight: bold;
+  font-size:   18px;
+  color: #dedede;
+  font-weight:   700;
+  background-color: #242121a8;
 }
+
+.imageBusinesses {
+  height:   64px;
+  width:   64px;
+}
+
+.Heading-Bar {
+  background-color: #473f3fb6;   
+  padding:   20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Captalist img {
+  width:   10%;
+}
+
 .money-display {
-  position: absolute;
-  top: 10px; 
-  left: 10px; 
-  font-size: 35px;
+  font-size:   24px;
+  font-weight: bold;
+  color:white;
 }
 
 .game-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; 
+  align-items: center; 
 }
 
+.business-item {
+  display: flex;
+  align-items: center;
+  margin:   10px;
+}
 
 .rectangle {
-  flex-basis: calc(50% - 100px);
-  width:  1200px; 
-  height:  125px; 
-  background-color: #eee; 
-  border:  1px solid #000;
-  margin:  10px;
-  cursor: pointer
+  width:   1200px;
+  height:   125px;
+  border:   1px solid #50474700;
+  cursor: pointer;
+  background-color: #8c8176;
+  border-radius:   10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left:   10px; 
 }
 
 </style>
