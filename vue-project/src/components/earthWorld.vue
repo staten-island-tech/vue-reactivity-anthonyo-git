@@ -5,6 +5,7 @@
         <img src="https://i.imgur.com/fFc9Jsg.png" alt="captalistMan">
       </div>
       <div class="money-display">${{ money }}</div>
+      <div class="tax">30% tax per second</div>
     </div>
     <div class="game-container">
       <div v-for="(business, index) in businesses" :key="index" class="business-item">
@@ -33,9 +34,9 @@ const addMoney = (amount) => {
 };
 
 
-// setInterval(() => {
-//   money.value +=  1; 
-// },  1000)
+setInterval(() => {
+  money.value /= 1.5; 
+},  1000)
 
 const businesses = ref([
   {
@@ -43,70 +44,70 @@ const businesses = ref([
     price:  1,
     quantityPurchased:  1,
     profit:  1,
-    image: 'https://i.imgur.com/uf6dPpY.png',
+    image: 'https://freepngimg.com/thumb/adventure_time/127188-lemongrab-adventure-time-free-transparent-image-hd.png',
   },
   {
     name: 'Shrimp Boat',
     price:  800000,
     quantityPurchased:  0,
     profit: 622080,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/boat.png',
+    image: 'https://i.imgur.com/dlfNmiV.png',
   },
   {
     name: 'Newspaper Deliver',
     price:  30,
     quantityPurchased:  0,
     profit:  60,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/newspaper.png',
+    image: 'https://i.imgur.com/SJm8Umj.png',
   },
   {
     name: 'Hockey Team',
     price:  6000000,
     quantityPurchased:  0,
     profit:  7464960,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/hockey.png',
+    image: 'https://i.imgur.com/AZTZlcQ.png',
   },
   {
     name: 'Car Wash',
     price:  500,
     quantityPurchased:  0,
     profit:  540,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/car.png',
+    image: 'https://i.imgur.com/4IexThd.png',
   }, 
   {
     name: 'Movie Studio',
     price:  100000000,
     quantityPurchased:  0,
     profit:  89579520,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/movie.png',
+    image: 'https://i.imgur.com/bAB76pw.png',
   },
   {
     name: 'Pizza Delivery',
     price:  3000,
     quantityPurchased:  0,
     profit:  4320,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/pizza.png',
+    image: 'https://i.imgur.com/yoPEYN8.png',
   }, 
   {
     name: 'Bank',
     price:  5000000000,
     quantityPurchased:  0,
     profit:  1074954520,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/bank.png',
+    image: 'https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/77406/bank-clipart-xl.png',
   },
   {
     name: 'Donut Shop',
     price:  50000,
     quantityPurchased:  0,
     profit:  51840,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/donut.png',
+    image: 'https://i.imgur.com/pLxkI46.png',
   },
   {
     name: 'Oil Company',
     price:  153434564431,
     quantityPurchased:  0,
     profit:  29668737024,
-    image: 'https://10288944-884245489883600444.preview.editmysite.com/uploads/b/4181373-341607469518366532/files/images/company.png',
+    image: 'https://i.imgur.com/9dPkzkC.png',
   },
 ]);
 
@@ -173,6 +174,12 @@ const businesses = ref([
   align-items: center;
   margin-left: 10px; 
 }
+
+.tax { 
+  position: absolute;
+  margin-left: 85vw;
+}
+
 
 </style>
 
