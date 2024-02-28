@@ -4,7 +4,7 @@
       <div class="Captalist">
         <img src="https://i.imgur.com/fFc9Jsg.png" alt="captalistMan">
       </div>
-      <div class="money-display">${{ money }}</div>
+      <div class="money-display">${{ money.toFixed(2) }}</div>
       <div class="tax">30% tax every 5 second</div>
     </div>
     <div class="game-container">
@@ -29,6 +29,7 @@
 import { ref } from 'vue';
 
 const money = ref(0);
+
 
 const addMoney = (amount) => {
   money.value += amount;
@@ -130,7 +131,7 @@ const businesses = ref([
   font-family: "Comic Sans",cursive;
   font-size: 18px;
   font-weight: 700;
-  background-color: #141414;
+  background-color: #2e2525;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -142,7 +143,7 @@ const businesses = ref([
 }
 
 .Heading-Bar {
-  background-color: #473f3fb6;   
+  background-color: #221c1cb6;   
   display: flex;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -186,7 +187,7 @@ const businesses = ref([
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
-  color: rgb(58, 50, 50);
+  color: rgb(161, 152, 152);
 }
 
 .tax { 
